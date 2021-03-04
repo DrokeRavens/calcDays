@@ -31,7 +31,6 @@ namespace ConsoleApp2
         }
 
         public int DiasNaoUteisAteAtual(DateTime dataPesquisa) {
-            var diasNoMes = DateTime.DaysInMonth(dataPesquisa.Year, dataPesquisa.Month);
             return Enumerable.Range(1, dataPesquisa.Day)
                     .Select(x => new DateTime(dataPesquisa.Year, dataPesquisa.Month, x))
                     .Where(x => x.DayOfWeek == DayOfWeek.Sunday || x.DayOfWeek == DayOfWeek.Saturday)
